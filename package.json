@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "node src/migrate.js schema.sql",
+    "db:seed": "node src/migrate.js seed.sql",
+    "test:constraints": "node src/check-test.js"
   },
   "keywords": [],
   "author": "",
